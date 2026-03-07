@@ -5,12 +5,12 @@
     "moduleResolution": "Node",
     "declaration": true,
     "outDir": "dist",
-    // "rootDir": "src",
+    "rootDir": "src",
     "strict": true,
     "skipLibCheck": true,
     "noUncheckedIndexedAccess": true,
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
-  "include": ["**/*.ts"]
+  "include": ["src"]
 }
