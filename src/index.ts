@@ -1,16 +1,17 @@
 import type { Linter } from 'eslint';
 import gitignore from 'eslint-config-flat-gitignore';
 
-import { importConfig } from './configs/importConfig/importConfig';
-import { javascriptConfig } from './configs/javascriptConfig/javascriptConfig';
-import { reactBaseConfig } from './configs/reactConfig/reactBaseConfig';
-import { reactNextConfig } from './configs/reactConfig/reactNextConfig';
-import { reactViteConfig } from './configs/reactConfig/reactViteConfig';
-import { stylisticConfig } from './configs/stylisticConfig/stylisticConfig';
-import { typescriptConfig } from './configs/typescriptConfig/typescriptConfig';
-import type { ConfigOption } from './types/types';
-import { detectFramework } from './utils/detectFramework';
-import { resolveConfig } from './utils/resolver';
+import {
+  importConfig,
+  javascriptConfig,
+  reactBaseConfig,
+  reactNextConfig,
+  reactViteConfig,
+  stylisticConfig,
+  typescriptConfig,
+} from './configs';
+import type { ConfigOption } from './types';
+import { detectFramework, resolveConfig } from './utils';
 
 export interface StoryOptions {
   stylistic?: ConfigOption

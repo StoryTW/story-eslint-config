@@ -1,5 +1,7 @@
 import stylisticPlugin from '@stylistic/eslint-plugin';
-import type { Linter } from 'eslint';
+import type {
+  Linter,
+} from 'eslint';
 
 export const stylisticConfig: Linter.Config = {
   name: 'story/stylistic',
@@ -14,37 +16,91 @@ export const stylisticConfig: Linter.Config = {
     '@stylistic/quote-props': ['warn', 'as-needed'],
     '@stylistic/semi': ['warn', 'always'],
     '@stylistic/comma-dangle': ['warn', 'always-multiline'],
-    '@stylistic/comma-spacing': ['warn', { before: false, after: true }],
+    '@stylistic/comma-spacing': ['warn', {
+      before: false,
+      after: true,
+    }],
     '@stylistic/comma-style': ['warn', 'last'],
     '@stylistic/arrow-parens': ['warn', 'always'],
     '@stylistic/max-len': [
       'warn',
-      { code: 100, ignoreUrls: true, ignoreStrings: true, ignoreTemplateLiterals: true },
+      {
+        code: 100,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+      },
     ],
     '@stylistic/block-spacing': ['warn', 'always'],
     '@stylistic/object-curly-spacing': ['warn', 'always'],
     '@stylistic/array-bracket-spacing': ['warn', 'never'],
-    '@stylistic/keyword-spacing': ['warn', { before: true, after: true }],
+    '@stylistic/keyword-spacing': ['warn', {
+      before: true,
+      after: true,
+    }],
     '@stylistic/space-before-blocks': ['warn', 'always'],
     '@stylistic/space-in-parens': ['warn', 'never'],
     '@stylistic/space-infix-ops': ['warn'],
-    '@stylistic/space-unary-ops': ['warn', { words: true, nonwords: false }],
+    '@stylistic/space-unary-ops': ['warn', {
+      words: true,
+      nonwords: false,
+    }],
     '@stylistic/space-before-function-paren': [
       'warn',
-      { anonymous: 'always', named: 'never', asyncArrow: 'always' },
+      {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always',
+      },
     ],
-    '@stylistic/key-spacing': ['warn', { beforeColon: false, afterColon: true }],
+    '@stylistic/key-spacing': ['warn', {
+      beforeColon: false,
+      afterColon: true,
+    }],
     '@stylistic/object-property-newline': ['warn', { allowAllPropertiesOnSameLine: true }],
     '@stylistic/array-element-newline': ['warn', 'consistent'],
     '@stylistic/padding-line-between-statements': [
       'warn',
-      { blankLine: 'always', prev: 'directive', next: '*' },
-      { blankLine: 'always', prev: '*', next: 'return' },
+      {
+        blankLine: 'always',
+        prev: 'directive',
+        next: '*',
+      },
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: 'return',
+      },
     ],
     '@stylistic/brace-style': ['warn', '1tbs', { allowSingleLine: true }],
     '@/curly': ['warn', 'multi-line'],
     '@stylistic/operator-linebreak': ['warn', 'before'],
     '@stylistic/linebreak-style': ['warn', 'unix'],
+    '@stylistic/object-curly-newline': [
+      'warn',
+      {
+        ObjectExpression: {
+          minProperties: 4,
+          multiline: true,
+          consistent: true,
+        },
+        ObjectPattern: {
+          minProperties: 4,
+          multiline: true,
+          consistent: true,
+        },
+        ImportDeclaration: {
+          minProperties: 4,
+          multiline: true,
+          consistent: true,
+        },
+        ExportDeclaration: {
+          minProperties: 4,
+          multiline: true,
+          consistent: true,
+        },
+      },
+    ],
 
     // old eslint names (for backwards compatibility)
     indent: ['warn', 2, { SwitchCase: 1 }],
@@ -53,32 +109,62 @@ export const stylisticConfig: Linter.Config = {
     'quote-props': ['warn', 'as-needed'],
     semi: ['warn', 'always'],
     'comma-dangle': ['warn', 'always-multiline'],
-    'comma-spacing': ['warn', { before: false, after: true }],
+    'comma-spacing': ['warn', {
+      before: false,
+      after: true,
+    }],
     'comma-style': ['warn', 'last'],
     'arrow-parens': ['warn', 'always'],
     'max-len': [
       'warn',
-      { code: 100, ignoreUrls: true, ignoreStrings: true, ignoreTemplateLiterals: true },
+      {
+        code: 100,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+      },
     ],
     'block-spacing': ['warn', 'always'],
     'object-curly-spacing': ['warn', 'always'],
     'array-bracket-spacing': ['warn', 'never'],
-    'keyword-spacing': ['warn', { before: true, after: true }],
+    'keyword-spacing': ['warn', {
+      before: true,
+      after: true,
+    }],
     'space-before-blocks': ['warn', 'always'],
     'space-in-parens': ['warn', 'never'],
     'space-infix-ops': ['warn'],
-    'space-unary-ops': ['warn', { words: true, nonwords: false }],
+    'space-unary-ops': ['warn', {
+      words: true,
+      nonwords: false,
+    }],
     'space-before-function-paren': [
       'warn',
-      { anonymous: 'always', named: 'never', asyncArrow: 'always' },
+      {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always',
+      },
     ],
-    'key-spacing': ['warn', { beforeColon: false, afterColon: true }],
+    'key-spacing': ['warn', {
+      beforeColon: false,
+      afterColon: true,
+    }],
     'object-property-newline': ['warn', { allowAllPropertiesOnSameLine: true }],
+    'object-curly-newline': 0,
     'array-element-newline': ['warn', 'consistent'],
     'padding-line-between-statements': [
       'warn',
-      { blankLine: 'always', prev: 'directive', next: '*' },
-      { blankLine: 'always', prev: '*', next: 'return' },
+      {
+        blankLine: 'always',
+        prev: 'directive',
+        next: '*',
+      },
+      {
+        blankLine: 'always',
+        prev: '*',
+        next: 'return',
+      },
     ],
     'brace-style': ['warn', '1tbs', { allowSingleLine: true }],
     curly: ['warn', 'multi-line'],
