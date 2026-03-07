@@ -21,7 +21,7 @@ export interface StoryOptions {
   react?: ConfigOption
 }
 
-export default function storyConfig(options: StoryOptions = {}) {
+export default function storyConfig(options: StoryOptions = {}): Linter.Config[] {
   const configs: Linter.Config[] = [
     gitignore({ strict: false }),
     ...javascriptConfig,
