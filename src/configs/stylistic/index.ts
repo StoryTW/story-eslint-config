@@ -1,7 +1,5 @@
 import stylisticPlugin from '@stylistic/eslint-plugin';
-import type {
-  Linter,
-} from 'eslint';
+import type { Linter } from 'eslint';
 
 export const stylisticConfig: Linter.Config = {
   name: 'story/stylistic',
