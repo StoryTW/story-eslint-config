@@ -11,7 +11,7 @@ import {
   typescriptConfig,
 } from './configs/index.js';
 import type { ConfigOption } from './types';
-import { detectFramework, resolveConfig } from './utils';
+import { detectFramework, resolveConfig } from './utils.js';
 
 export interface StoryOptions {
   stylistic?: ConfigOption
