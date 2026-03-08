@@ -9,7 +9,7 @@ import {
   reactViteConfig,
   stylisticConfig,
   typescriptConfig,
-} from './configs';
+} from './configs/index.js';
 import type { ConfigOption } from './types';
 import { detectFramework, resolveConfig } from './utils';
 
