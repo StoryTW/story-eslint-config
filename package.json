@@ -1,6 +1,6 @@
 {
   "name": "@storytw/eslint-config",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Storytw shared ESLint config",
   "type": "module",
   "keywords": [
