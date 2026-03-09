@@ -21,15 +21,15 @@ ESLint ≥ 9
 2. Установите пакет:  
 
 ```sh
-npm install --save-dev @story/eslint-config
+npm install --save-dev @storytw/eslint-config
 
 # или
 
-pnpm add -D @story/eslint-config
+pnpm add -D @storytw/eslint-config
 
 # или
 
-yarn add -D @story/eslint-config
+yarn add -D @storytw/eslint-config
 ```
 
 3. В `eslint.config.ts` импортируйте конфиг
