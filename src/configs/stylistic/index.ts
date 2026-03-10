@@ -99,7 +99,20 @@ export const stylisticConfig: Linter.Config = {
         },
       },
     ],
-    '@stylistic/member-delimiter-style': 'warn',
+    '@stylistic/member-delimiter-style': [
+      'warn',
+      {
+        multiline: {
+          delimiter: 'semi',
+          requireLast: true,
+        },
+        singleline: {
+          delimiter: 'semi',
+          requireLast: true,
+        },
+        multilineDetection: 'brackets',
+      },
+    ],
     '@stylistic/multiline-ternary': ['warn', 'always'],
     '@stylistic/jsx-wrap-multilines': [
       'warn',
