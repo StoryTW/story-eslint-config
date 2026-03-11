@@ -9,16 +9,7 @@ ESLint ≥ 9
 
 
 ## 🚀 Быстрый старт
-
-1. Настройте `.npmrc` для GitHub Packages. 
-
-Так как пакет публикуется через GitHub Packages, нужно указать registry в `.npmrc`:
-
-```sh
-@storytw:registry=https://npm.pkg.github.com
-```
-
-2. Установите пакет:  
+1. Установите пакет:  
 
 ```sh
 npm install --save-dev @storytw/eslint-config
@@ -32,7 +23,7 @@ pnpm add -D @storytw/eslint-config
 yarn add -D @storytw/eslint-config
 ```
 
-3. В `eslint.config.ts` импортируйте конфиг
+2. В `eslint.config.ts` импортируйте конфиг
 
 ```sh
 import storyConfig from '@storytw/eslint-config';
