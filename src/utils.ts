@@ -1,4 +1,5 @@
 import type { Linter } from 'eslint';
+
 import fs from 'node:fs';
 import path from 'node:path';
 

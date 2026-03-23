@@ -1,4 +1,5 @@
 import type { Linter } from 'eslint';
+
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactXPlugin from 'eslint-plugin-react-x';
 

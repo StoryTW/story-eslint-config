@@ -1,4 +1,5 @@
 import type { Linter } from 'eslint';
+
 import importPlugin from 'eslint-plugin-import';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import unusedImports from 'eslint-plugin-unused-imports';
@@ -36,6 +37,7 @@ export const importConfig: Linter.Config = {
       {
         groups: [
           ['^\\u0000'], // side effect imports
+          ['\\u0000$'], // all type imports
           ['^react', '^react-dom'], // react
           ['^@?\\w'], // external packages
           ['^@/'], // internal aliases

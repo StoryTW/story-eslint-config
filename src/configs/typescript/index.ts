@@ -1,4 +1,5 @@
 import type { Linter } from 'eslint';
+
 import tseslint from 'typescript-eslint';
 
 export const typescriptConfig: Linter.Config[] = [
