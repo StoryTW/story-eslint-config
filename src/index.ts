@@ -1,6 +1,3 @@
-import type { ConfigOption } from './types';
-import type { Linter } from 'eslint';
-
 import gitignore from 'eslint-config-flat-gitignore';
 
 import {
@@ -13,6 +10,9 @@ import {
   typescriptConfig,
 } from './configs/index.js';
 import { detectFramework, resolveConfig } from './utils.js';
+
+import type { ConfigOption } from './types';
+import type { Linter } from 'eslint';
 
 export interface StoryOptions {
   stylistic?: ConfigOption;

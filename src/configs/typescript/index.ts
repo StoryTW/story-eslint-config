@@ -1,6 +1,6 @@
-import type { Linter } from 'eslint';
-
 import tseslint from 'typescript-eslint';
+
+import type { Linter } from 'eslint';
 
 export const typescriptConfig: Linter.Config[] = [
   {

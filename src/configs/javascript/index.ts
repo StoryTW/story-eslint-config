@@ -1,7 +1,7 @@
-import type { Linter } from 'eslint';
-
 import js from '@eslint/js';
 import globals from 'globals';
+
+import type { Linter } from 'eslint';
 
 export const javascriptConfig: Linter.Config[] = [
   {

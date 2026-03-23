@@ -1,9 +1,9 @@
-import type { Linter } from 'eslint';
-
 import fs from 'node:fs';
 import path from 'node:path';
 
 import { ConfigOption } from './types';
+
+import type { Linter } from 'eslint';
 
 export function resolveConfig(
   baseConfig: Linter.Config,
