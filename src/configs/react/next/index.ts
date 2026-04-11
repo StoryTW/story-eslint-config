@@ -1,3 +1,5 @@
+import reactRefresh from 'eslint-plugin-react-refresh';
+
 import type { Linter } from 'eslint';
 
 export const reactNextConfig: Linter.Config = {
@@ -5,5 +7,11 @@ export const reactNextConfig: Linter.Config = {
 
   files: ['**/*.jsx', '**/*.tsx'],
 
-  rules: {},
+  plugins: {
+    'react-refresh': reactRefresh,
+  },
+
+  rules: {
+    ...reactRefresh.configs.next.rules,
+  },
 };
