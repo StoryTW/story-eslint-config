@@ -1,4 +1,4 @@
-import importPlugin from 'eslint-plugin-import';
+import importXPlugin from 'eslint-plugin-import-x';
 import unusedImports from 'eslint-plugin-unused-imports';
 
 import type { Linter } from 'eslint';
@@ -8,12 +8,13 @@ export const importConfig: Linter.Config = {
 
   plugins: {
     'unused-imports': unusedImports,
-    import: importPlugin,
+    'import-x': importXPlugin,
   },
 
   rules: {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
+
     'unused-imports/no-unused-vars': [
       'warn',
       {
@@ -30,7 +31,7 @@ export const importConfig: Linter.Config = {
     // ------- //
     // 'unused-imports/no-unused-imports': 'warn',
 
-    'import/order': [
+    'import-x/order': [
       'warn',
       {
         groups: ['builtin', 'external', 'internal', 'parent', 'index', 'sibling', 'type'],
@@ -48,6 +49,6 @@ export const importConfig: Linter.Config = {
       },
     ],
 
-    'import/newline-after-import': ['warn', { count: 1 }],
+    'import-x/newline-after-import': ['warn', { count: 1 }],
   },
 };

@@ -3,18 +3,20 @@ import reactXPlugin from 'eslint-plugin-react-x';
 
 import type { Linter } from 'eslint';
 
+const reactHooksConfig = reactHooks.configs.flat.recommended;
+
 export const reactBaseConfig: Linter.Config = {
   name: 'story/react/base',
 
   files: ['**/*.jsx', '**/*.tsx'],
 
   plugins: {
-    'react-hooks': reactHooks,
+    ...reactHooksConfig.plugins,
     'react-x': reactXPlugin,
   },
 
   rules: {
-    ...reactHooks.configs.recommended.rules,
+    ...reactHooksConfig.rules,
 
     'react-hooks/exhaustive-deps': 'off',
 
