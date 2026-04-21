@@ -1,5 +1,5 @@
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import importXPlugin from 'eslint-plugin-import-x';
+import { importX } from 'eslint-plugin-import-x';
 import unusedImports from 'eslint-plugin-unused-imports';
 
 import type { Linter } from 'eslint';
@@ -9,7 +9,7 @@ export const importConfig: Linter.Config = {
 
   plugins: {
     'unused-imports': unusedImports,
-    'import-x': importXPlugin,
+    'import-x': importX,
   },
   settings: {
     'import-x/resolver-next': [
