@@ -1,4 +1,4 @@
-# @story/eslint-config
+# @storytw/eslint-config
 ![eslint](https://img.shields.io/badge/eslint-config-blue)
 
 ## 📌 Требования
