@@ -40,10 +40,26 @@ export const importConfig: Linter.Config = {
     'import-x/order': [
       'warn',
       {
-        groups: ['builtin', 'external', 'internal', 'parent', 'index', 'sibling', 'type'],
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
+          'type',
+        ],
         pathGroups: [
-          { pattern: 'react', group: 'external', position: 'before' },
-          { pattern: '@/**', group: 'internal', position: 'after' },
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@/*',
+            group: 'internal',
+            position: 'after',
+          },
         ],
         pathGroupsExcludedImportTypes: ['react'],
         'newlines-between': 'always',
