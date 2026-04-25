@@ -56,7 +56,7 @@ export const importConfig: Linter.Config = {
             position: 'before',
           },
           {
-            pattern: '@/*',
+            pattern: '@/**',
             group: 'internal',
             position: 'after',
           },
