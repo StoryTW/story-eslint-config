@@ -12,7 +12,9 @@ export const typescriptConfig: Linter.Config[] = [
       parser: tseslint.parser,
 
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: ['eslint.config.ts'],
+        },
         tsconfigRootDir: process.cwd(),
       },
     },
