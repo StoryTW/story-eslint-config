@@ -5,6 +5,6 @@ export type ConfigOption = | boolean
     boolean,
     {
       rules?: Linter.RulesRecord;
-      plugins?: Record<string, any>;
+      plugins?: Linter.Config['plugins'];
     },
   ];

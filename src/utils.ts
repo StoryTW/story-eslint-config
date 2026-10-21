@@ -1,8 +1,4 @@
-import fs from 'node:fs';
-import path from 'node:path';
-
-import { ConfigOption } from './types';
-
+import type { ConfigOption } from './types.js';
 import type { Linter } from 'eslint';
 
 export function resolveConfig(
@@ -16,7 +12,11 @@ export function resolveConfig(
   }
 
   if (Array.isArray(resolved)) {
-    const [, userOptions] = resolved;
+    const [enabled, userOptions] = resolved;
+
+    if (!enabled) {
+      return null;
+    }
 
     return {
       ...baseConfig,
@@ -24,32 +24,12 @@ export function resolveConfig(
         ...baseConfig.rules,
         ...userOptions?.rules,
       },
+      plugins: {
+        ...baseConfig.plugins,
+        ...userOptions?.plugins,
+      },
     };
   }
 
   return baseConfig;
-}
-
-export function detectFramework(root = process.cwd()) {
-  try {
-    const pkgPath = path.join(root, 'package.json');
-    const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
-
-    const deps = {
-      ...pkg.dependencies,
-      ...pkg.devDependencies,
-    };
-
-    if (deps?.next) {
-      return 'next';
-    }
-
-    if (deps?.vite) {
-      return 'vite';
-    }
-
-    return 'unknown';
-  } catch {
-    return 'unknown';
-  }
 }

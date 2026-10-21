@@ -1,6 +1,6 @@
 {
   "name": "@storytw/eslint-config",
-  "version": "1.1.6",
+  "version": "2.0.0",
   "description": "Storytw shared ESLint config",
   "type": "module",
   "keywords": [
@@ -8,12 +8,21 @@
   ],
   "author": "StoryTW",
   "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js",
-    "./configs": "./dist/configs/index.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./configs": {
+      "types": "./dist/configs/index.d.ts",
+      "import": "./dist/configs/index.js"
+    }
   },
   "files": [
     "dist"
@@ -23,26 +32,32 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "npm run typecheck && tsdown",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build",
     "lint": "eslint . --ext .ts,.tsx"
   },
   "dependencies": {
     "@eslint/js": "10.0.1",
     "@stylistic/eslint-plugin": "5.10.0",
-    "eslint": "10.7.0",
-    "eslint-config-flat-gitignore": "2.3.0",
+    "eslint-config-flat-gitignore": "2.4.0",
     "eslint-import-resolver-typescript": "4.4.5",
     "eslint-plugin-import-x": "4.17.1",
     "eslint-plugin-react-hooks": "7.1.1",
-    "eslint-plugin-react-refresh": "0.5.3",
-    "eslint-plugin-react-x": "5.18.0",
+    "eslint-plugin-react-refresh": "0.5.7",
+    "eslint-plugin-react-x": "5.28.4",
     "eslint-plugin-unused-imports": "4.4.1",
-    "globals": "17.7.0",
-    "typescript-eslint": "8.65.0"
+    "globals": "17.13.0",
+    "typescript-eslint": "8.72.0"
+  },
+  "peerDependencies": {
+    "eslint": "^10.0.0"
   },
   "devDependencies": {
-    "@types/node": "26.1.1",
+    "@types/node": "26.6.5",
+    "eslint": "10.13.0",
     "jiti": "2.7.0",
+    "tsdown": "0.23.1",
     "typescript": "6.0.3"
   },
   "allowScripts": {

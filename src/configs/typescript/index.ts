@@ -3,6 +3,10 @@ import tseslint from 'typescript-eslint';
 import type { Linter } from 'eslint';
 
 export const typescriptConfig: Linter.Config[] = [
+  ...tseslint.configs.recommended.map((config) => ({
+    ...config,
+    files: ['**/*.ts', '**/*.tsx'],
+  })),
   {
     name: 'story/typescript',
 
@@ -20,7 +24,6 @@ export const typescriptConfig: Linter.Config[] = [
     },
 
     rules: {
-      ...tseslint.configs.recommended.flat,
       // my rules
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-unused-vars': 'off',

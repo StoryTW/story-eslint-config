@@ -14,7 +14,5 @@ export const javascriptConfig: Linter.Config[] = [
       sourceType: 'module',
       globals: globals.browser,
     },
-
-    rules: {},
   },
 ];

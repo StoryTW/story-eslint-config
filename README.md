@@ -5,8 +5,7 @@
 
 Node.js ≥ 24
 
-ESLint ≥ 10
-
+ESLint 10.x
 
 ## 🚀 Быстрый старт
 1. Установите пакет:  
@@ -28,7 +27,7 @@ yarn add -D @storytw/eslint-config
 ```sh
 import storyConfig from '@storytw/eslint-config';
 
-export default storyConfig();
+export default storyConfig({ framework: 'vite' });
 ```
 
 
@@ -53,7 +52,6 @@ export default storyConfig();
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always"
   },
-  "editor.tabSize": 2,
   "[typescriptreact]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
@@ -67,7 +65,10 @@ export default storyConfig();
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[json]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "eslint.validate": [
     "javascript",
@@ -80,11 +81,35 @@ export default storyConfig();
 ```
 ## 🔨 Расширение конфига
 
+### Фреймворк
+
+Конфиг предназначен для фронтенда и использует браузерные глобальные переменные.
+Поле `framework` обязательно: выберите `'vite'`, `'next'` или `'none'`. Автоопределения нет.
+По умолчанию React включён.
+
+```ts
+import storyConfig from '@storytw/eslint-config';
+
+export default storyConfig({
+  framework: 'vite',
+});
+```
+
+- `framework: 'vite'` подключает дополнительные настройки Vite.
+- `framework: 'next'` подключает дополнительные настройки Next.
+- `framework: 'none'` оставляет общие React-правила без настроек Next/Vite.
+- `react: false` отключает все React-блоки. Поле `framework` остаётся обязательным; используйте `'none'`, если React не нужен.
+
+При переходе со старой версии замените `storyConfig()` на вызов с явным `framework`.
+
+### Правила и плагины
+
 ```sh
 import storyConfig from '@storytw/eslint-config';
 
 // Пример
 export default storyConfig({
+  framework: 'none',
   react: false, // отключение правил и плагинов для react (так же работает и для остальных: typescript/javascript/stylistic/import)
   typescript: [
     true,

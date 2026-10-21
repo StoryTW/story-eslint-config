@@ -1,3 +1,3 @@
 import storyConfig from './src';
 
-export default storyConfig();
+export default storyConfig({ framework: 'none' });
