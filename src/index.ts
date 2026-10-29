@@ -49,11 +49,18 @@ export default function storyConfig(options: StoryOptions): Linter.Config[] {
       (c): c is Linter.Config => Boolean(c),
     );
 
-    configs.push(
-      ...(reactConfigs
-        .map((c) => resolveConfig(c, options.react))
-        .filter(Boolean) as Linter.Config[]),
-    );
+    const resolvedReactConfigs = reactConfigs
+      .map((c) => resolveConfig(c, options.react))
+      .filter((c): c is Linter.Config => Boolean(c));
+
+    configs.push(...resolvedReactConfigs);
+
+    if (options.framework === 'next' && resolvedReactConfigs.length > 0) {
+      configs.push({
+        name: 'story/react/next/ignores',
+        ignores: ['**/.next/**', '**/out/**', '**/build/**', '**/next-env.d.ts'],
+      });
+    }
   }
 
   return configs;

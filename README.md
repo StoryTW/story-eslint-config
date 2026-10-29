@@ -96,11 +96,19 @@ export default storyConfig({
 ```
 
 - `framework: 'vite'` подключает дополнительные настройки Vite.
-- `framework: 'next'` подключает дополнительные настройки Next.
+- `framework: 'next'` подключает правила Next.js из `@next/eslint-plugin-next` (Core Web Vitals) и настройки Fast Refresh. При включённом React из проверки исключаются `.next`, `out`, `build` и `next-env.d.ts`, в том числе во вложенных проектах.
 - `framework: 'none'` оставляет общие React-правила без настроек Next/Vite.
 - `react: false` отключает все React-блоки. Поле `framework` остаётся обязательным; используйте `'none'`, если React не нужен.
 
 При переходе со старой версии замените `storyConfig()` на вызов с явным `framework`.
+
+Для Next.js достаточно указать `framework: 'next'` — отдельно устанавливать `eslint-config-next` не нужно:
+
+```ts
+import storyConfig from '@storytw/eslint-config';
+
+export default storyConfig({ framework: 'next' });
+```
 
 ### Правила и плагины
 
