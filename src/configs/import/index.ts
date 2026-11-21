@@ -32,11 +32,6 @@ export const importConfig: Linter.Config = {
       },
     ],
 
-    // ------- //
-    // [OFF AUTODELETE UNUSED IMPORTS]
-    // ------- //
-    // 'unused-imports/no-unused-imports': 'warn',
-
     'import-x/order': [
       'warn',
       {
@@ -61,7 +56,7 @@ export const importConfig: Linter.Config = {
             position: 'after',
           },
         ],
-        pathGroupsExcludedImportTypes: ['react'],
+        pathGroupsExcludedImportTypes: ['react', 'type'],
         'newlines-between': 'always',
         alphabetize: {
           order: 'asc',
