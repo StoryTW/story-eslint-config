@@ -8,7 +8,55 @@ export const stylisticConfig: Linter.Config = {
 
   rules: {
     ...stylisticPlugin.configs.recommended.rules,
+
     // modern
+    '@stylistic/list-style': [
+      'warn',
+      {
+        empty: 'ignore',
+        singleLine: {
+          spacing: 'never',
+          maxItems: Infinity,
+        },
+        multiLine: {
+          minItems: 0,
+        },
+        overrides: {
+          '{}': {
+            singleLine: {
+              spacing: 'always',
+            },
+          },
+          '[]': {
+            singleLine: {
+              spacing: 'never',
+            },
+          },
+          '()': 'off',
+          '<>': 'off',
+          ObjectExpression: {
+            singleLine: {
+              maxItems: 3,
+            },
+          },
+          ObjectPattern: {
+            singleLine: {
+              maxItems: 3,
+            },
+          },
+          ImportDeclaration: {
+            singleLine: {
+              maxItems: 3,
+            },
+          },
+          ExportNamedDeclaration: {
+            singleLine: {
+              maxItems: 3,
+            },
+          },
+        },
+      },
+    ],
     '@stylistic/indent': ['warn', 2, { SwitchCase: 1 }],
     '@stylistic/quotes': ['warn', 'single', { avoidEscape: true }],
     '@stylistic/jsx-quotes': ['warn', 'prefer-single'],
@@ -31,8 +79,6 @@ export const stylisticConfig: Linter.Config = {
       },
     ],
     '@stylistic/block-spacing': ['warn', 'always'],
-    '@stylistic/object-curly-spacing': ['warn', 'always'],
-    '@stylistic/array-bracket-spacing': ['warn', 'never'],
     '@stylistic/keyword-spacing': ['warn', {
       before: true,
       after: true,
@@ -56,8 +102,6 @@ export const stylisticConfig: Linter.Config = {
       beforeColon: false,
       afterColon: true,
     }],
-    '@stylistic/object-property-newline': ['warn', { allowAllPropertiesOnSameLine: true }],
-    '@stylistic/array-element-newline': ['warn', 'consistent'],
     '@stylistic/padding-line-between-statements': [
       'warn',
       {
@@ -75,31 +119,6 @@ export const stylisticConfig: Linter.Config = {
     '@/curly': ['warn', 'multi-line'],
     '@stylistic/operator-linebreak': ['warn', 'before', { overrides: { '=': 'none' } }],
     '@stylistic/linebreak-style': ['warn', 'unix'],
-    '@stylistic/object-curly-newline': [
-      'warn',
-      {
-        ObjectExpression: {
-          minProperties: 4,
-          multiline: true,
-          consistent: true,
-        },
-        ObjectPattern: {
-          minProperties: 4,
-          multiline: true,
-          consistent: true,
-        },
-        ImportDeclaration: {
-          minProperties: 4,
-          multiline: true,
-          consistent: true,
-        },
-        ExportDeclaration: {
-          minProperties: 4,
-          multiline: true,
-          consistent: true,
-        },
-      },
-    ],
     '@stylistic/member-delimiter-style': [
       'warn',
       {
@@ -154,18 +173,35 @@ export const stylisticConfig: Linter.Config = {
     '@stylistic/type-generic-spacing': 'warn',
     '@stylistic/type-annotation-spacing': [
       'warn',
-      { after: true, before: false, overrides: { arrow: 'ignore' } },
+      {
+        after: true,
+        before: false,
+      },
     ],
     '@stylistic/template-curly-spacing': ['warn', 'never'],
     '@stylistic/rest-spread-spacing': ['warn', 'never'],
-    '@stylistic/no-multi-spaces': 'warn',
+    '@stylistic/no-multi-spaces': [
+      'warn',
+      {
+        exceptions: {
+          Property: true,
+          ImportAttribute: true,
+        },
+      },
+    ],
     '@stylistic/no-floating-decimal': 'warn',
     '@stylistic/indent-binary-ops': ['warn', 2],
     '@stylistic/dot-location': ['warn', 'property'],
-    '@stylistic/arrow-spacing': ['warn', { before: true, after: true }],
+    '@stylistic/arrow-spacing': ['warn', {
+      before: true,
+      after: true,
+    }],
     '@stylistic/switch-colon-spacing': [
       'warn',
-      { after: true, before: false },
+      {
+        after: true,
+        before: false,
+      },
     ],
     '@stylistic/padded-blocks': [
       'error',
@@ -224,18 +260,14 @@ export const stylisticConfig: Linter.Config = {
     '@typescript-eslint/comma-dangle': 0,
     '@typescript-eslint/comma-spacing': 0,
     '@typescript-eslint/func-call-spacing': 0,
-    '@typescript-eslint/indent': 0,
     '@typescript-eslint/key-spacing': 0,
     '@typescript-eslint/keyword-spacing': 0,
     '@typescript-eslint/lines-around-comment': 0,
     '@typescript-eslint/lines-between-class-members': 0,
-    '@typescript-eslint/member-delimiter-style': 0,
     '@typescript-eslint/no-extra-parens': 0,
     '@typescript-eslint/no-extra-semi': 0,
     '@typescript-eslint/object-curly-spacing': 0,
     '@typescript-eslint/padding-line-between-statements': 0,
-    '@typescript-eslint/quotes': 0,
-    '@typescript-eslint/semi': 0,
     '@typescript-eslint/space-before-blocks': 0,
     '@typescript-eslint/space-before-function-paren': 0,
     '@typescript-eslint/space-infix-ops': 0,
