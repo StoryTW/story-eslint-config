@@ -71,6 +71,7 @@ export const importConfig: Linter.Config = {
       },
     ],
 
+    'import-x/consistent-type-specifier-style': ['warn', 'prefer-top-level'],
     'import-x/newline-after-import': ['warn', { count: 1 }],
   },
 };
